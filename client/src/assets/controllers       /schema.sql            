@@ -1,0 +1,21 @@
+-- This file defines the SQL schema for the PostgreSQL database.
+
+CREATE TABLE languages (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    iso_code VARCHAR(10) UNIQUE NOT NULL
+);
+
+CREATE TABLE audio_snippets (
+    id SERIAL PRIMARY KEY,
+    language_id INT REFERENCES languages(id),
+    audio_url VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE user_guesses (
+    id SERIAL PRIMARY KEY,
+    audio_snippet_id INT REFERENCES audio_snippets(id),
+    guessed_language_id INT REFERENCES languages(id),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
