@@ -1,0 +1,828 @@
+{
+  "languages": [
+    {
+      "id": 0,
+      "name": "South Africa",
+      "iso": "af_za",
+      "country": "ZAF",
+      "audio_dir": "src/assets/audio/south_africa",
+      "displayName": "South Africa"
+    },
+    {
+      "id": 1,
+      "name": "Ethiopia",
+      "iso": "am_et",
+      "country": "ETH",
+      "audio_dir": "src/assets/audio/ethiopia",
+      "displayName": "Ethiopia"
+    },
+    {
+      "id": 2,
+      "name": "Egypt",
+      "iso": "ar_eg",
+      "country": "EGY",
+      "audio_dir": "src/assets/audio/egypt",
+      "displayName": "Egypt"
+    },
+    {
+      "id": 3,
+      "name": "India",
+      "iso": "as_in",
+      "country": "IND",
+      "audio_dir": "src/assets/audio/india",
+      "displayName": "India"
+    },
+    {
+      "id": 4,
+      "name": "Spain",
+      "iso": "ast_es",
+      "country": "ESP",
+      "audio_dir": "src/assets/audio/spain",
+      "displayName": "Spain"
+    },
+    {
+      "id": 5,
+      "name": "Azerbaijan",
+      "iso": "az_az",
+      "country": "AZE",
+      "audio_dir": "src/assets/audio/azerbaijan",
+      "displayName": "Azerbaijan"
+    },
+    {
+      "id": 6,
+      "name": "Belarus",
+      "iso": "be_by",
+      "country": "BLR",
+      "audio_dir": "src/assets/audio/belarus",
+      "displayName": "Belarus"
+    },
+    {
+      "id": 7,
+      "name": "Bulgaria",
+      "iso": "bg_bg",
+      "country": "BGR",
+      "audio_dir": "src/assets/audio/bulgaria",
+      "displayName": "Bulgaria"
+    },
+    {
+      "id": 8,
+      "name": "India",
+      "iso": "bn_in",
+      "country": "IND",
+      "audio_dir": "src/assets/audio/india",
+      "displayName": "India"
+    },
+    {
+      "id": 9,
+      "name": "Bosnia and Herzegovina",
+      "iso": "bs_ba",
+      "country": "BIH",
+      "audio_dir": "src/assets/audio/bosnia_and_herzegovina",
+      "displayName": "Bosnia And Herzegovina"
+    },
+    {
+      "id": 10,
+      "name": "Spain",
+      "iso": "ca_es",
+      "country": "ESP",
+      "audio_dir": "src/assets/audio/spain",
+      "displayName": "Spain"
+    },
+    {
+      "id": 11,
+      "name": "Philippines",
+      "iso": "ceb_ph",
+      "country": "PHL",
+      "audio_dir": "src/assets/audio/philippines",
+      "displayName": "Philippines"
+    },
+    {
+      "id": 12,
+      "name": "Iraq",
+      "iso": "ckb_iq",
+      "country": "IRQ",
+      "audio_dir": "src/assets/audio/iraq",
+      "displayName": "Iraq"
+    },
+    {
+      "id": 13,
+      "name": "China",
+      "iso": "cmn_hans_cn",
+      "country": "CHN",
+      "audio_dir": "src/assets/audio/china",
+      "displayName": "China"
+    },
+    {
+      "id": 14,
+      "name": "Czech Republic",
+      "iso": "cs_cz",
+      "country": "CZE",
+      "audio_dir": "src/assets/audio/czech_republic",
+      "displayName": "Czech Republic"
+    },
+    {
+      "id": 15,
+      "name": "United Kingdom",
+      "iso": "cy_gb",
+      "country": "GBR",
+      "audio_dir": "src/assets/audio/united_kingdom",
+      "displayName": "United Kingdom"
+    },
+    {
+      "id": 16,
+      "name": "Denmark",
+      "iso": "da_dk",
+      "country": "DNK",
+      "audio_dir": "src/assets/audio/denmark",
+      "displayName": "Denmark"
+    },
+    {
+      "id": 17,
+      "name": "Germany",
+      "iso": "de_de",
+      "country": "DEU",
+      "audio_dir": "src/assets/audio/germany",
+      "displayName": "Germany"
+    },
+    {
+      "id": 18,
+      "name": "Greece",
+      "iso": "el_gr",
+      "country": "GRC",
+      "audio_dir": "src/assets/audio/greece",
+      "displayName": "Greece"
+    },
+    {
+      "id": 19,
+      "name": "United States",
+      "iso": "en_us",
+      "country": "USA",
+      "audio_dir": "src/assets/audio/united_states",
+      "displayName": "United States"
+    },
+    {
+      "id": 20,
+      "name": "Unknown",
+      "iso": "es_419",
+      "country": null,
+      "audio_dir": "src/assets/audio/unknown",
+      "displayName": "Unknown"
+    },
+    {
+      "id": 21,
+      "name": "Estonia",
+      "iso": "et_ee",
+      "country": "EST",
+      "audio_dir": "src/assets/audio/estonia",
+      "displayName": "Estonia"
+    },
+    {
+      "id": 22,
+      "name": "Iran",
+      "iso": "fa_ir",
+      "country": "IRN",
+      "audio_dir": "src/assets/audio/iran",
+      "displayName": "Iran"
+    },
+    {
+      "id": 23,
+      "name": "Senegal",
+      "iso": "ff_sn",
+      "country": "SEN",
+      "audio_dir": "src/assets/audio/senegal",
+      "displayName": "Senegal"
+    },
+    {
+      "id": 24,
+      "name": "Finland",
+      "iso": "fi_fi",
+      "country": "FIN",
+      "audio_dir": "src/assets/audio/finland",
+      "displayName": "Finland"
+    },
+    {
+      "id": 25,
+      "name": "Philippines",
+      "iso": "fil_ph",
+      "country": "PHL",
+      "audio_dir": "src/assets/audio/philippines",
+      "displayName": "Philippines"
+    },
+    {
+      "id": 26,
+      "name": "France",
+      "iso": "fr_fr",
+      "country": "FRA",
+      "audio_dir": "src/assets/audio/france",
+      "displayName": "France"
+    },
+    {
+      "id": 27,
+      "name": "Ireland",
+      "iso": "ga_ie",
+      "country": "IRL",
+      "audio_dir": "src/assets/audio/ireland",
+      "displayName": "Ireland"
+    },
+    {
+      "id": 28,
+      "name": "Spain",
+      "iso": "gl_es",
+      "country": "ESP",
+      "audio_dir": "src/assets/audio/spain",
+      "displayName": "Spain"
+    },
+    {
+      "id": 29,
+      "name": "India",
+      "iso": "gu_in",
+      "country": "IND",
+      "audio_dir": "src/assets/audio/india",
+      "displayName": "India"
+    },
+    {
+      "id": 30,
+      "name": "Nigeria",
+      "iso": "ha_ng",
+      "country": "NGA",
+      "audio_dir": "src/assets/audio/nigeria",
+      "displayName": "Nigeria"
+    },
+    {
+      "id": 31,
+      "name": "Israel",
+      "iso": "he_il",
+      "country": "ISR",
+      "audio_dir": "src/assets/audio/israel",
+      "displayName": "Israel"
+    },
+    {
+      "id": 32,
+      "name": "India",
+      "iso": "hi_in",
+      "country": "IND",
+      "audio_dir": "src/assets/audio/india",
+      "displayName": "India"
+    },
+    {
+      "id": 33,
+      "name": "Croatia",
+      "iso": "hr_hr",
+      "country": "HRV",
+      "audio_dir": "src/assets/audio/croatia",
+      "displayName": "Croatia"
+    },
+    {
+      "id": 34,
+      "name": "Hungary",
+      "iso": "hu_hu",
+      "country": "HUN",
+      "audio_dir": "src/assets/audio/hungary",
+      "displayName": "Hungary"
+    },
+    {
+      "id": 35,
+      "name": "Armenia",
+      "iso": "hy_am",
+      "country": "ARM",
+      "audio_dir": "src/assets/audio/armenia",
+      "displayName": "Armenia"
+    },
+    {
+      "id": 36,
+      "name": "Indonesia",
+      "iso": "id_id",
+      "country": "IDN",
+      "audio_dir": "src/assets/audio/indonesia",
+      "displayName": "Indonesia"
+    },
+    {
+      "id": 37,
+      "name": "Nigeria",
+      "iso": "ig_ng",
+      "country": "NGA",
+      "audio_dir": "src/assets/audio/nigeria",
+      "displayName": "Nigeria"
+    },
+    {
+      "id": 38,
+      "name": "Iceland",
+      "iso": "is_is",
+      "country": "ISL",
+      "audio_dir": "src/assets/audio/iceland",
+      "displayName": "Iceland"
+    },
+    {
+      "id": 39,
+      "name": "Italy",
+      "iso": "it_it",
+      "country": "ITA",
+      "audio_dir": "src/assets/audio/italy",
+      "displayName": "Italy"
+    },
+    {
+      "id": 40,
+      "name": "Japan",
+      "iso": "ja_jp",
+      "country": "JPN",
+      "audio_dir": "src/assets/audio/japan",
+      "displayName": "Japan"
+    },
+    {
+      "id": 41,
+      "name": "Indonesia",
+      "iso": "jv_id",
+      "country": "IDN",
+      "audio_dir": "src/assets/audio/indonesia",
+      "displayName": "Indonesia"
+    },
+    {
+      "id": 42,
+      "name": "Georgia",
+      "iso": "ka_ge",
+      "country": "GEO",
+      "audio_dir": "src/assets/audio/georgia",
+      "displayName": "Georgia"
+    },
+    {
+      "id": 43,
+      "name": "Kenya",
+      "iso": "kam_ke",
+      "country": "KEN",
+      "audio_dir": "src/assets/audio/kenya",
+      "displayName": "Kenya"
+    },
+    {
+      "id": 44,
+      "name": "Cape Verde",
+      "iso": "kea_cv",
+      "country": "CPV",
+      "audio_dir": "src/assets/audio/cape_verde",
+      "displayName": "Cape Verde"
+    },
+    {
+      "id": 45,
+      "name": "Kazakhstan",
+      "iso": "kk_kz",
+      "country": "KAZ",
+      "audio_dir": "src/assets/audio/kazakhstan",
+      "displayName": "Kazakhstan"
+    },
+    {
+      "id": 46,
+      "name": "Cambodia",
+      "iso": "km_kh",
+      "country": "KHM",
+      "audio_dir": "src/assets/audio/cambodia",
+      "displayName": "Cambodia"
+    },
+    {
+      "id": 47,
+      "name": "India",
+      "iso": "kn_in",
+      "country": "IND",
+      "audio_dir": "src/assets/audio/india",
+      "displayName": "India"
+    },
+    {
+      "id": 48,
+      "name": "South Korea",
+      "iso": "ko_kr",
+      "country": "KOR",
+      "audio_dir": "src/assets/audio/south_korea",
+      "displayName": "South Korea"
+    },
+    {
+      "id": 49,
+      "name": "Kyrgyzstan",
+      "iso": "ky_kg",
+      "country": "KGZ",
+      "audio_dir": "src/assets/audio/kyrgyzstan",
+      "displayName": "Kyrgyzstan"
+    },
+    {
+      "id": 50,
+      "name": "Luxembourg",
+      "iso": "lb_lu",
+      "country": "LUX",
+      "audio_dir": "src/assets/audio/luxembourg",
+      "displayName": "Luxembourg"
+    },
+    {
+      "id": 51,
+      "name": "Uganda",
+      "iso": "lg_ug",
+      "country": "UGA",
+      "audio_dir": "src/assets/audio/uganda",
+      "displayName": "Uganda"
+    },
+    {
+      "id": 52,
+      "name": "Democratic Republic of the Congo",
+      "iso": "ln_cd",
+      "country": "COD",
+      "audio_dir": "src/assets/audio/democratic_republic_of_the_congo",
+      "displayName": "Democratic Republic Of The Congo"
+    },
+    {
+      "id": 53,
+      "name": "Laos",
+      "iso": "lo_la",
+      "country": "LAO",
+      "audio_dir": "src/assets/audio/laos",
+      "displayName": "Laos"
+    },
+    {
+      "id": 54,
+      "name": "Lithuania",
+      "iso": "lt_lt",
+      "country": "LTU",
+      "audio_dir": "src/assets/audio/lithuania",
+      "displayName": "Lithuania"
+    },
+    {
+      "id": 55,
+      "name": "Kenya",
+      "iso": "luo_ke",
+      "country": "KEN",
+      "audio_dir": "src/assets/audio/kenya",
+      "displayName": "Kenya"
+    },
+    {
+      "id": 56,
+      "name": "Latvia",
+      "iso": "lv_lv",
+      "country": "LVA",
+      "audio_dir": "src/assets/audio/latvia",
+      "displayName": "Latvia"
+    },
+    {
+      "id": 57,
+      "name": "New Zealand",
+      "iso": "mi_nz",
+      "country": "NZL",
+      "audio_dir": "src/assets/audio/new_zealand",
+      "displayName": "New Zealand"
+    },
+    {
+      "id": 58,
+      "name": "North Macedonia",
+      "iso": "mk_mk",
+      "country": "MKD",
+      "audio_dir": "src/assets/audio/north_macedonia",
+      "displayName": "North Macedonia"
+    },
+    {
+      "id": 59,
+      "name": "India",
+      "iso": "ml_in",
+      "country": "IND",
+      "audio_dir": "src/assets/audio/india",
+      "displayName": "India"
+    },
+    {
+      "id": 60,
+      "name": "Mongolia",
+      "iso": "mn_mn",
+      "country": "MNG",
+      "audio_dir": "src/assets/audio/mongolia",
+      "displayName": "Mongolia"
+    },
+    {
+      "id": 61,
+      "name": "India",
+      "iso": "mr_in",
+      "country": "IND",
+      "audio_dir": "src/assets/audio/india",
+      "displayName": "India"
+    },
+    {
+      "id": 62,
+      "name": "Malaysia",
+      "iso": "ms_my",
+      "country": "MYS",
+      "audio_dir": "src/assets/audio/malaysia",
+      "displayName": "Malaysia"
+    },
+    {
+      "id": 63,
+      "name": "Malta",
+      "iso": "mt_mt",
+      "country": "MLT",
+      "audio_dir": "src/assets/audio/malta",
+      "displayName": "Malta"
+    },
+    {
+      "id": 64,
+      "name": "Myanmar",
+      "iso": "my_mm",
+      "country": "MMR",
+      "audio_dir": "src/assets/audio/myanmar",
+      "displayName": "Myanmar"
+    },
+    {
+      "id": 65,
+      "name": "Norway",
+      "iso": "nb_no",
+      "country": "NOR",
+      "audio_dir": "src/assets/audio/norway",
+      "displayName": "Norway"
+    },
+    {
+      "id": 66,
+      "name": "Nepal",
+      "iso": "ne_np",
+      "country": "NPL",
+      "audio_dir": "src/assets/audio/nepal",
+      "displayName": "Nepal"
+    },
+    {
+      "id": 67,
+      "name": "Netherlands",
+      "iso": "nl_nl",
+      "country": "NLD",
+      "audio_dir": "src/assets/audio/netherlands",
+      "displayName": "Netherlands"
+    },
+    {
+      "id": 68,
+      "name": "South Africa",
+      "iso": "nso_za",
+      "country": "ZAF",
+      "audio_dir": "src/assets/audio/south_africa",
+      "displayName": "South Africa"
+    },
+    {
+      "id": 69,
+      "name": "Malawi",
+      "iso": "ny_mw",
+      "country": "MWI",
+      "audio_dir": "src/assets/audio/malawi",
+      "displayName": "Malawi"
+    },
+    {
+      "id": 70,
+      "name": "France",
+      "iso": "oc_fr",
+      "country": "FRA",
+      "audio_dir": "src/assets/audio/france",
+      "displayName": "France"
+    },
+    {
+      "id": 71,
+      "name": "Ethiopia",
+      "iso": "om_et",
+      "country": "ETH",
+      "audio_dir": "src/assets/audio/ethiopia",
+      "displayName": "Ethiopia"
+    },
+    {
+      "id": 72,
+      "name": "India",
+      "iso": "or_in",
+      "country": "IND",
+      "audio_dir": "src/assets/audio/india",
+      "displayName": "India"
+    },
+    {
+      "id": 73,
+      "name": "India",
+      "iso": "pa_in",
+      "country": "IND",
+      "audio_dir": "src/assets/audio/india",
+      "displayName": "India"
+    },
+    {
+      "id": 74,
+      "name": "Poland",
+      "iso": "pl_pl",
+      "country": "POL",
+      "audio_dir": "src/assets/audio/poland",
+      "displayName": "Poland"
+    },
+    {
+      "id": 75,
+      "name": "Afghanistan",
+      "iso": "ps_af",
+      "country": "AFG",
+      "audio_dir": "src/assets/audio/afghanistan",
+      "displayName": "Afghanistan"
+    },
+    {
+      "id": 76,
+      "name": "Brazil",
+      "iso": "pt_br",
+      "country": "BRA",
+      "audio_dir": "src/assets/audio/brazil",
+      "displayName": "Brazil"
+    },
+    {
+      "id": 77,
+      "name": "Romania",
+      "iso": "ro_ro",
+      "country": "ROU",
+      "audio_dir": "src/assets/audio/romania",
+      "displayName": "Romania"
+    },
+    {
+      "id": 78,
+      "name": "Russia",
+      "iso": "ru_ru",
+      "country": "RUS",
+      "audio_dir": "src/assets/audio/russia",
+      "displayName": "Russia"
+    },
+    {
+      "id": 79,
+      "name": "India",
+      "iso": "sd_in",
+      "country": "IND",
+      "audio_dir": "src/assets/audio/india",
+      "displayName": "India"
+    },
+    {
+      "id": 80,
+      "name": "Slovakia",
+      "iso": "sk_sk",
+      "country": "SVK",
+      "audio_dir": "src/assets/audio/slovakia",
+      "displayName": "Slovakia"
+    },
+    {
+      "id": 81,
+      "name": "Slovenia",
+      "iso": "sl_si",
+      "country": "SVN",
+      "audio_dir": "src/assets/audio/slovenia",
+      "displayName": "Slovenia"
+    },
+    {
+      "id": 82,
+      "name": "Zimbabwe",
+      "iso": "sn_zw",
+      "country": "ZWE",
+      "audio_dir": "src/assets/audio/zimbabwe",
+      "displayName": "Zimbabwe"
+    },
+    {
+      "id": 83,
+      "name": "Somalia",
+      "iso": "so_so",
+      "country": "SOM",
+      "audio_dir": "src/assets/audio/somalia",
+      "displayName": "Somalia"
+    },
+    {
+      "id": 84,
+      "name": "Serbia",
+      "iso": "sr_rs",
+      "country": "SRB",
+      "audio_dir": "src/assets/audio/serbia",
+      "displayName": "Serbia"
+    },
+    {
+      "id": 85,
+      "name": "Sweden",
+      "iso": "sv_se",
+      "country": "SWE",
+      "audio_dir": "src/assets/audio/sweden",
+      "displayName": "Sweden"
+    },
+    {
+      "id": 86,
+      "name": "Kenya",
+      "iso": "sw_ke",
+      "country": "KEN",
+      "audio_dir": "src/assets/audio/kenya",
+      "displayName": "Kenya"
+    },
+    {
+      "id": 87,
+      "name": "India",
+      "iso": "ta_in",
+      "country": "IND",
+      "audio_dir": "src/assets/audio/india",
+      "displayName": "India"
+    },
+    {
+      "id": 88,
+      "name": "India",
+      "iso": "te_in",
+      "country": "IND",
+      "audio_dir": "src/assets/audio/india",
+      "displayName": "India"
+    },
+    {
+      "id": 89,
+      "name": "Tajikistan",
+      "iso": "tg_tj",
+      "country": "TJK",
+      "audio_dir": "src/assets/audio/tajikistan",
+      "displayName": "Tajikistan"
+    },
+    {
+      "id": 90,
+      "name": "Thailand",
+      "iso": "th_th",
+      "country": "THA",
+      "audio_dir": "src/assets/audio/thailand",
+      "displayName": "Thailand"
+    },
+    {
+      "id": 91,
+      "name": "Turkey",
+      "iso": "tr_tr",
+      "country": "TUR",
+      "audio_dir": "src/assets/audio/turkey",
+      "displayName": "Turkey"
+    },
+    {
+      "id": 92,
+      "name": "Ukraine",
+      "iso": "uk_ua",
+      "country": "UKR",
+      "audio_dir": "src/assets/audio/ukraine",
+      "displayName": "Ukraine"
+    },
+    {
+      "id": 93,
+      "name": "Angola",
+      "iso": "umb_ao",
+      "country": "AGO",
+      "audio_dir": "src/assets/audio/angola",
+      "displayName": "Angola"
+    },
+    {
+      "id": 94,
+      "name": "Pakistan",
+      "iso": "ur_pk",
+      "country": "PAK",
+      "audio_dir": "src/assets/audio/pakistan",
+      "displayName": "Pakistan"
+    },
+    {
+      "id": 95,
+      "name": "Uzbekistan",
+      "iso": "uz_uz",
+      "country": "UZB",
+      "audio_dir": "src/assets/audio/uzbekistan",
+      "displayName": "Uzbekistan"
+    },
+    {
+      "id": 96,
+      "name": "Vietnam",
+      "iso": "vi_vn",
+      "country": "VNM",
+      "audio_dir": "src/assets/audio/vietnam",
+      "displayName": "Vietnam"
+    },
+    {
+      "id": 97,
+      "name": "Senegal",
+      "iso": "wo_sn",
+      "country": "SEN",
+      "audio_dir": "src/assets/audio/senegal",
+      "displayName": "Senegal"
+    },
+    {
+      "id": 98,
+      "name": "South Africa",
+      "iso": "xh_za",
+      "country": "ZAF",
+      "audio_dir": "src/assets/audio/south_africa",
+      "displayName": "South Africa"
+    },
+    {
+      "id": 99,
+      "name": "Unknown",
+      "iso": "yo_ng",
+      "country": null,
+      "audio_dir": "src/assets/audio/unknown",
+      "displayName": "Unknown"
+    },
+    {
+      "id": 100,
+      "name": "Unknown",
+      "iso": "yue_hant_hk",
+      "country": null,
+      "audio_dir": "src/assets/audio/unknown",
+      "displayName": "Unknown"
+    },
+    {
+      "id": 101,
+      "name": "Unknown",
+      "iso": "zu_za",
+      "country": null,
+      "audio_dir": "src/assets/audio/unknown",
+      "displayName": "Unknown"
+    },
+    {
+      "id": 102,
+      "name": "Unknown",
+      "iso": "all",
+      "country": null,
+      "audio_dir": "src/assets/audio/unknown",
+      "displayName": "Unknown"
+    }
+  ]
+}

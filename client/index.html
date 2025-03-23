@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Guessr</title>
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+  crossorigin=""/>
+  
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+  <div class="game-container">
+    <header class="game-header">
+      <h1>Language Guessr</h1>
+      <div class="score-container">
+        <span>Score: <span id="score">0</span></span>
+        <span>Round: <span id="round">1</span>/<span id="total-rounds">5</span></span>
+        <span id="announcement"></span>
+      </div>
+    </header>
+    
+    <div class="main-content">
+      <div id="map-container">
+        <div id="map"></div>
+        <div id="floating-player">
+          <div class="player-controls">
+            <button id="play-btn" class="player-btn play-btn">
+              <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="5,3 19,12 5,21" fill="white"/>
+              </svg>
+              <svg class="pause-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="4" width="4" height="16" fill="white"/>
+                <rect x="14" y="4" width="4" height="16" fill="white"/>
+              </svg>
+            </button>
+            <div class="progress-wrapper">
+              <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+              </div>
+            </div>
+            <button id="replay-btn" class="player-btn replay-btn">
+              <svg class="replay-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12,5V1L7,6l5,5V7c3.31,0,6,2.69,6,6s-2.69,6-6,6s-6-2.69-6-6H4c0,4.42,3.58,8,8,8s8-3.58,8-8S16.42,5,12,5z" fill="white"/>
+              </svg>
+            </button>
+            <div class="selection-display" id="selected-country">Click a country</div>
+            <button id="confirm-btn" class="player-btn confirm-btn" disabled>
+              ✓
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="sidebar" style="display: none;">
+        <!-- Original sidebar content -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+  crossorigin=""></script>
+  
+  <script src="src/js/main.js"></script>
+</body>
+</html>

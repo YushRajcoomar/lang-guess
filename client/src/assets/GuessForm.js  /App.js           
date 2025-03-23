@@ -1,0 +1,26 @@
+import React, { useState } from 'react';
+
+const GuessForm = ({ onSubmit }) => {
+    const [guess, setGuess] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        onSubmit(guess);
+        setGuess('');
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <input
+                type="text"
+                value={guess}
+                onChange={(e) => setGuess(e.target.value)}
+                placeholder="Enter your guess"
+                required
+            />
+            <button type="submit">Submit Guess</button>
+        </form>
+    );
+};
+
+export default GuessForm;
