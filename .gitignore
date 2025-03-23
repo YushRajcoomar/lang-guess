@@ -2,5 +2,4 @@
 *.wav
 *.mp3
 
-git remote add origin https://github.com/YushRajcoomar/lang-guess.git
 node_modules
