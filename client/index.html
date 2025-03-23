@@ -25,10 +25,11 @@
     </header>
     
     <div class="flex flex-1 overflow-hidden">
-      <div class="relative flex-1 overflow-hidden">
+      <div id="map-container" class="relative flex-1 overflow-hidden w-full">
         <div id="map" class="w-full h-full"></div>
       </div>
-      <div id="floating-player" class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-dark-overlay shadow-player rounded-full py-3 px-5 z-10 flex items-center backdrop-blur transition-all hover:bg-black/95">
+      
+      <div id="floating-player" class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-dark-overlay shadow-player rounded-full py-3 px-5 z-[1001] flex items-center backdrop-blur transition-all hover:bg-black/95">
         <div class="flex items-center gap-4">
           <!-- Play Button -->
           <button id="play-btn" class="w-[45px] h-[45px] bg-spotify rounded-full shadow-spotify flex items-center justify-center transition hover:scale-105 hover:bg-spotify-hover active:scale-95">

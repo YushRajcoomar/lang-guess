@@ -661,6 +661,10 @@ video {
   z-index: 10;
 }
 
+.z-\[1001\] {
+  z-index: 1001;
+}
+
 .m-0 {
   margin: 0px;
 }
@@ -988,6 +992,26 @@ video {
 
 .leaflet-container {
   height: 100%;
+}
+
+/* Ensure the map container doesn't interfere with z-indexing */
+
+#map-container {
+  position: relative;
+  /* Ensure stacking context */
+  z-index: 1;
+  /* Keep it below the floating player */
+}
+
+/* Ensure the floating player has a high z-index */
+
+#floating-player {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  /* Ensure it's always on top */
 }
 
 .hover\:h-2:hover {

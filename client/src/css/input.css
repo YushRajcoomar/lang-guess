@@ -7,6 +7,21 @@
   @apply h-full;
 }
 
+/* Ensure the map container doesn't interfere with z-indexing */
+#map-container {
+  position: relative; /* Ensure stacking context */
+  z-index: 1; /* Keep it below the floating player */
+}
+
+/* Ensure the floating player has a high z-index */
+#floating-player {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001; /* Ensure it's always on top */
+}
+
 @layer components {
   .map-message {
     @apply absolute bg-black/80 text-white px-4 py-2 rounded-full text-center font-medium whitespace-nowrap pointer-events-none shadow-md;
