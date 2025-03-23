@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for Leaflet */
+.leaflet-container {
+  @apply h-full;
+}
+
+@layer components {
+  .map-message {
+    @apply absolute bg-black/80 text-white px-4 py-2 rounded-full text-center font-medium whitespace-nowrap pointer-events-none shadow-md;
+  }
+
+  .correct-map-message {
+    @apply bg-correct/90;
+  }
+
+  .incorrect-map-message {
+    @apply bg-incorrect/90;
+  }
+
+  .correct-answer-message {
+    @apply bg-blue-500/90;
+  }
+
+  /* Play button states */
+  .playing .play-icon {
+    @apply hidden;
+  }
+
+  .playing .pause-icon {
+    @apply block;
+  }
+
+  .pause-icon {
+    @apply hidden;
+  }
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta charset="UTF-8">
@@ -11,53 +11,60 @@
   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
   crossorigin=""/>
   
-  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="src/css/output.css">
 </head>
-<body>
-  <div class="game-container">
-    <header class="game-header">
-      <h1>Language Guessr</h1>
-      <div class="score-container">
+<body class="h-full m-0 p-0 font-sans bg-gray-100">
+  <div class="flex flex-col h-screen">
+    <header class="flex justify-between items-center px-5 py-2.5 bg-gray-800 text-white">
+      <h1 class="m-0 text-xl font-medium">Language Guessr</h1>
+      <div class="text-base">
         <span>Score: <span id="score">0</span></span>
-        <span>Round: <span id="round">1</span>/<span id="total-rounds">5</span></span>
+        <span class="ml-4">Round: <span id="round">1</span>/<span id="total-rounds">5</span></span>
         <span id="announcement"></span>
       </div>
     </header>
     
-    <div class="main-content">
-      <div id="map-container">
-        <div id="map"></div>
-        <div id="floating-player">
-          <div class="player-controls">
-            <button id="play-btn" class="player-btn play-btn">
-              <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="5,3 19,12 5,21" fill="white"/>
-              </svg>
-              <svg class="pause-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <rect x="6" y="4" width="4" height="16" fill="white"/>
-                <rect x="14" y="4" width="4" height="16" fill="white"/>
-              </svg>
-            </button>
-            <div class="progress-wrapper">
-              <div class="progress-container">
-                <div id="progress-bar" class="progress-bar"></div>
-              </div>
-            </div>
-            <button id="replay-btn" class="player-btn replay-btn">
-              <svg class="replay-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12,5V1L7,6l5,5V7c3.31,0,6,2.69,6,6s-2.69,6-6,6s-6-2.69-6-6H4c0,4.42,3.58,8,8,8s8-3.58,8-8S16.42,5,12,5z" fill="white"/>
-              </svg>
-            </button>
-            <div class="selection-display" id="selected-country">Click a country</div>
-            <button id="confirm-btn" class="player-btn confirm-btn" disabled>
-              ✓
-            </button>
-          </div>
-        </div>
+    <div class="flex flex-1 overflow-hidden">
+      <div class="relative flex-1 overflow-hidden">
+        <div id="map" class="w-full h-full"></div>
       </div>
-      
-      <div class="sidebar" style="display: none;">
-        <!-- Original sidebar content -->
+      <div id="floating-player" class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-dark-overlay shadow-player rounded-full py-3 px-5 z-10 flex items-center backdrop-blur transition-all hover:bg-black/95">
+        <div class="flex items-center gap-4">
+          <!-- Play Button -->
+          <button id="play-btn" class="w-[45px] h-[45px] bg-spotify rounded-full shadow-spotify flex items-center justify-center transition hover:scale-105 hover:bg-spotify-hover active:scale-95">
+            <svg class="w-6 h-6 text-white play-icon" viewBox="0 0 24 24">
+              <polygon points="8,5 19,12 8,19" fill="currentColor"/>
+            </svg>
+            <svg class="w-6 h-6 text-white pause-icon" viewBox="0 0 24 24">
+              <rect x="6" y="5" width="4" height="14" fill="currentColor"/>
+              <rect x="14" y="5" width="4" height="14" fill="currentColor"/>
+            </svg>
+          </button>
+          
+          <!-- Progress Bar -->
+          <div class="flex-1 min-w-[150px] max-w-[300px] mx-2.5">
+            <div class="h-1.5 bg-light-overlay rounded cursor-pointer overflow-hidden transition-all hover:h-2">
+              <div id="progress-bar" class="h-full w-0 bg-spotify rounded transition-[width]"></div>
+            </div>
+          </div>
+          
+          <!-- Replay Button -->
+          <button id="replay-btn" class="w-[35px] h-[35px] bg-light-overlay rounded-full flex items-center justify-center transition hover:bg-white/30 hover:scale-105">
+            <svg class="w-5 h-5 text-white transition hover:rotate-12" viewBox="0 0 24 24">
+              <path d="M12,5V1L7,6l5,5V7c3.31,0,6,2.69,6,6s-2.69,6-6,6s-6-2.69-6-6H4c0,4.42,3.58,8,8,8s8-3.58,8-8S16.42,5,12,5z" fill="currentColor"/>
+            </svg>
+          </button>
+          
+          <!-- Country Selection Display -->
+          <div id="selected-country" class="text-white text-sm px-4 py-0 h-[35px] bg-light-overlay rounded-full mx-1.5 flex items-center justify-center whitespace-nowrap overflow-hidden text-ellipsis max-w-[200px] translate-y-1">
+            Click a country
+          </div>
+          
+          <!-- Confirm Button -->
+          <button id="confirm-btn" disabled class="w-[35px] h-[35px] bg-green-600 text-white rounded-full flex items-center justify-center text-lg font-bold shadow-confirm disabled:bg-white/20 disabled:cursor-not-allowed disabled:shadow-none transition hover:bg-green-500 hover:scale-105 active:scale-95">
+            ✓
+          </button>
+        </div>
       </div>
     </div>
   </div>

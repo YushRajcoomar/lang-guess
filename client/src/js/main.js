@@ -509,12 +509,17 @@ function showBottomMapMessage(message, className) {
   if (!bottomMessage) {
     bottomMessage = document.createElement('div');
     bottomMessage.id = 'bottom-map-message';
+    bottomMessage.className = "absolute bottom-24 left-1/2 -translate-x-1/2 bg-blue-500/90 text-white px-5 py-2.5 rounded-full text-center font-medium z-10 shadow-md max-w-[80%]";
     document.getElementById('map-container').appendChild(bottomMessage);
   }
   
-  // Set the text and class
+  // Set the text
   bottomMessage.textContent = message;
-  bottomMessage.className = className;
+  
+  // Add additional classes if needed
+  if (className === "correct-answer-message") {
+    bottomMessage.classList.add("bg-blue-500/90", "border-l-4", "border-blue-600");
+  }
   
   // Make sure it's visible
   bottomMessage.style.display = 'block';
@@ -679,4 +684,43 @@ function debugCountryCodeMatching() {
   
   console.log(`Summary: ${matchCount} languages have matching countries, ${noMatchCount} do not match`);
   console.log("=====================================================");
+}
+
+// For the play button toggling
+function togglePlayButton(isPlaying) {
+  const playBtn = safeGetElement('play-btn');
+  if (playBtn) {
+    if (isPlaying) {
+      playBtn.classList.add('playing');
+    } else {
+      playBtn.classList.remove('playing');
+    }
+  }
+}
+
+// For map messages
+function showMapMessage(layer, message, className) {
+  // Get the center of the layer
+  const center = layer.getBounds().getCenter();
+  
+  // Create a new div element for the message
+  const messageDiv = document.createElement('div');
+  messageDiv.className = `map-message ${className}`;
+  messageDiv.textContent = message;
+  
+  // Create a new marker with the custom div
+  const marker = L.marker(center, {
+    icon: L.divIcon({
+      className: 'message-marker',
+      html: messageDiv,
+      iconSize: [120, 40],
+      iconAnchor: [60, 20]
+    })
+  }).addTo(map);
+  
+  // Store the marker so we can remove it later
+  if (!game.mapMessages) {
+    game.mapMessages = [];
+  }
+  game.mapMessages.push(marker);
 }

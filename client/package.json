@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --minify",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch"
   },
   "dependencies": {
     "react": "^17.0.2",
