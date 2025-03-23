@@ -416,7 +416,7 @@ function confirmGuess() {
   }, 2500);
 }
 
-// Replace the showClearResult function with this new map-focused version
+// Update the showClearResult function
 function showClearResult(isCorrect, guessedCountry) {
   // Remove existing announcement if there is one
   const announcement = document.getElementById('announcement');
@@ -432,24 +432,59 @@ function showClearResult(isCorrect, guessedCountry) {
   const { layer } = game.selectedCountry;
   
   if (isCorrect) {
-    // Show "Correct Guess!" on the selected country
+    // Show "Correct!" on the selected country
     showMapMessage(layer, "Correct!", "correct-map-message");
     
-    // Style the country
+    // Style the country green for correct
     layer.setStyle({
-      fillColor: '#27ae60', // Green for correct
+      fillColor: '#27ae60',
       fillOpacity: 0.7
     });
+    
+    // Trigger confetti animation
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#27ae60', '#2ecc71', '#1abc9c', '#3498db']
+    });
+    
+    // Add a second burst for more excitement
+    setTimeout(() => {
+      confetti({
+        particleCount: 50,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0.2, y: 0.6 }
+      });
+      
+      confetti({
+        particleCount: 50,
+        angle: 120,
+        spread: 55,
+        origin: { x: 0.8, y: 0.6 }
+      });
+    }, 250);
   } else {
-    // Show "Incorrect!!" on the selected country
+    // For incorrect answers
     showMapMessage(layer, "Incorrect!", "incorrect-map-message");
     
-    // Style the selected country (red for wrong)
+    // Style the selected country red for wrong
     layer.setStyle({
       fillColor: '#e74c3c',
       fillOpacity: 0.7
     });
     
+    // Shake the map for wrong answer feedback
+    const mapContainer = document.getElementById('map-container');
+    if (mapContainer) {
+      mapContainer.classList.add('shake');
+      setTimeout(() => {
+        mapContainer.classList.remove('shake');
+      }, 500);
+    }
+    
+    // Show the correct country
     const correctCountry = game.countries.find(c => c.code === game.currentLanguage.country);
     
     if (correctCountry) {
@@ -459,7 +494,7 @@ function showClearResult(isCorrect, guessedCountry) {
         fillOpacity: 0.7
       });
       
-      // MODIFIED: Removed the word "language" from the message
+      // Show bottom message with the correct answer
       showBottomMapMessage(
         `Correct answer: ${correctCountry.name} (${game.currentLanguage.name})`,
         "correct-answer-message"
@@ -475,7 +510,7 @@ function showClearResult(isCorrect, guessedCountry) {
   }
 }
 
-// Helper function to add messages to the map
+// Update the showMapMessage function to add the explosion class
 function showMapMessage(layer, message, className) {
   // Get the center of the layer
   const center = layer.getBounds().getCenter();
@@ -494,6 +529,13 @@ function showMapMessage(layer, message, className) {
       iconAnchor: [60, 20]
     })
   }).addTo(map);
+  
+  // Add explosion effect for incorrect answers
+  if (className === 'incorrect-map-message') {
+    setTimeout(() => {
+      messageDiv.classList.add('exploding');
+    }, 50); // Small delay to ensure the DOM has updated
+  }
   
   // Store the marker so we can remove it later
   if (!game.mapMessages) {
@@ -696,31 +738,4 @@ function togglePlayButton(isPlaying) {
       playBtn.classList.remove('playing');
     }
   }
-}
-
-// For map messages
-function showMapMessage(layer, message, className) {
-  // Get the center of the layer
-  const center = layer.getBounds().getCenter();
-  
-  // Create a new div element for the message
-  const messageDiv = document.createElement('div');
-  messageDiv.className = `map-message ${className}`;
-  messageDiv.textContent = message;
-  
-  // Create a new marker with the custom div
-  const marker = L.marker(center, {
-    icon: L.divIcon({
-      className: 'message-marker',
-      html: messageDiv,
-      iconSize: [120, 40],
-      iconAnchor: [60, 20]
-    })
-  }).addTo(map);
-  
-  // Store the marker so we can remove it later
-  if (!game.mapMessages) {
-    game.mapMessages = [];
-  }
-  game.mapMessages.push(marker);
 }
