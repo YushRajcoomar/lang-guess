@@ -1,7 +1,7 @@
 // Initialize the map with world wrapping enabled
 const map = L.map('map', {
   center: [20, 0],
-  zoom: 2,
+  zoom: 3,  // Changed from 2 to 3
   minZoom: 2,
   maxZoom: 5,
   maxBounds: [[-90, -210], [90, 210]], // Wider bounds that allow wrapping
@@ -12,10 +12,11 @@ const map = L.map('map', {
 });
 
 // Update the tile layer to allow wrapping
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  subdomains: 'abcd',
   maxZoom: 19,
-  noWrap: false // Allow tiles to wrap around the world
+  noWrap: false
 }).addTo(map);
 
 // Game state
