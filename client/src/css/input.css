@@ -45,6 +45,16 @@
   20%, 40%, 60%, 80% { transform: translateX(5px); }
 }
 
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .navbar-title {
+    font-family: 'Nabla', cursive;
+  }
+}
+
 @layer components {
   .map-message {
     @apply absolute bg-black/80 text-white px-4 py-2 rounded-full text-center font-medium whitespace-nowrap pointer-events-none shadow-md;
@@ -64,14 +74,15 @@
     content: '';
     position: absolute;
     top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
+    left: -10%; /* Adjust from 50% to 30% to move it leftward */
+    width: 140%;
+    height: 140%;
     transform: translate(-50%, -50%);
     background-color: theme('colors.incorrect');
     border-radius: 50%;
     z-index: -1;
     animation: explosion 0.6s ease-out forwards;
+    pointer-events: none;
   }
 
   .correct-answer-message {
@@ -93,5 +104,9 @@
 
   .shake {
     animation: shake 0.5s ease-in-out;
+  }
+
+  #bottom-map-message {
+    z-index: 1000 !important;
   }
 }

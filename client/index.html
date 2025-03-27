@@ -12,17 +12,76 @@
   crossorigin=""/>
   
   <link rel="stylesheet" href="src/css/output.css">
+
+  <!-- Add these font links to your <head> section -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nabla&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body class="h-full m-0 p-0 font-sans bg-gray-100">
-  <div class="flex flex-col h-screen">
-    <header class="flex justify-between items-center px-5 py-2.5 bg-gray-800 text-white">
-      <h1 class="m-0 text-xl font-medium">Language Guessr</h1>
-      <div class="text-base">
-        <span>Score: <span id="score">0</span></span>
-        <span class="ml-4">Round: <span id="round">1</span>/<span id="total-rounds">5</span></span>
-        <span id="announcement"></span>
+  <nav class="bg-gradient-to-r from-blue-900 to-blue-950 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo/Brand with Nabla font -->
+        <div class="flex-shrink-0 flex items-center">
+          <span class="navbar-title text-white text-xl">Language Guessr</span>
+        </div>
+        
+        <!-- Navigation Links - Left-aligned, after logo -->
+        <div class="hidden md:flex items-center flex-grow">
+          <div class="flex space-x-4">
+            <a href="#" class="text-white hover:bg-blue-800 hover:bg-opacity-50 px-3 py-2 rounded-md font-medium transition-colors">Home</a>
+            <a href="#" class="text-blue-100 hover:bg-blue-800 hover:bg-opacity-50 px-3 py-2 rounded-md font-medium transition-colors">How to Play</a>
+            <a href="#" class="text-blue-100 hover:bg-blue-800 hover:bg-opacity-50 px-3 py-2 rounded-md font-medium transition-colors">Languages</a>
+          </div>
+        </div>
+        
+        <!-- Score Panel - Now explicitly right-aligned -->
+        <div class="flex items-center ml-auto">
+          <div class="flex items-center space-x-3 bg-blue-800/30 rounded-full px-5 py-1.5">
+            <div class="text-white font-medium">
+              <span class="text-blue-100">Score:</span> <span id="score-display" class="text-white">0</span>
+            </div>
+            <div class="w-px h-5 bg-blue-300/30"></div>
+            <div class="text-white font-medium">
+              <span class="text-blue-100">Round:</span> <span id="round-display" class="text-white">1/5</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mobile menu button - Next to score panel on small screens -->
+        <div class="flex items-center md:hidden ml-4">
+          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-blue-100 hover:text-white hover:bg-blue-800 hover:bg-opacity-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <!-- Menu icon -->
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!-- X icon for when menu is open -->
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
       </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-800 hover:bg-opacity-50">Home</a>
+        <a href="#" class="text-blue-100 block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-800 hover:bg-opacity-50">How to Play</a>
+        <a href="#" class="text-blue-100 block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-800 hover:bg-opacity-50">Languages</a>
+      </div>
+    </div>
+  </nav>
+  <div class="flex flex-col h-screen">
+    <!-- Comment out or delete this section in your HTML -->
+    <!-- 
+    <header class="game-header">
+      ...header content...
     </header>
+    -->
     
     <div class="flex flex-1 overflow-hidden">
       <div id="map-container" class="relative flex-1 overflow-hidden w-full">

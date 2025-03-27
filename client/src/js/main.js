@@ -68,9 +68,8 @@ fetch('src/assets/geojson/ne_10m_admin_0_countries.json')
     // Highlight countries with audio samples
     highlightAvailableCountries();
     
-    // Initialize the first round
+    // Initialize the UI only, but don't start a round yet
     updateUI();
-    startNewRound();
   })
   .catch(error => console.error('Error loading GeoJSON data:', error));
 
@@ -314,9 +313,19 @@ function getCountryNameByCode(code) {
 
 // Update the UI
 function updateUI() {
-  document.getElementById('score').textContent = game.score;
-  document.getElementById('round').textContent = game.currentRound;
-  document.getElementById('total-rounds').textContent = game.totalRounds;
+  // Update existing UI elements
+  
+  // Update navbar elements
+  const scoreDisplay = document.getElementById('score-display');
+  const roundDisplay = document.getElementById('round-display');
+  
+  if (scoreDisplay) {
+    scoreDisplay.textContent = game.score;
+  }
+  
+  if (roundDisplay) {
+    roundDisplay.textContent = `${game.currentRound}/${game.totalRounds}`;
+  }
 }
 
 // Update selectCountry function to work with the checkbox
@@ -551,7 +560,7 @@ function showBottomMapMessage(message, className) {
   if (!bottomMessage) {
     bottomMessage = document.createElement('div');
     bottomMessage.id = 'bottom-map-message';
-    bottomMessage.className = "absolute bottom-24 left-1/2 -translate-x-1/2 bg-blue-500/90 text-white px-5 py-2.5 rounded-full text-center font-medium z-10 shadow-md max-w-[80%]";
+    bottomMessage.className = "absolute bottom-24 left-1/2 -translate-x-1/2 bg-blue-500/90 text-white px-5 py-2.5 rounded-full text-center font-medium z-[1000] shadow-md max-w-[80%]";
     document.getElementById('map-container').appendChild(bottomMessage);
   }
   
@@ -737,5 +746,70 @@ function togglePlayButton(isPlaying) {
     } else {
       playBtn.classList.remove('playing');
     }
+  }
+}
+
+// Add to your main.js or as a separate script
+document.addEventListener('DOMContentLoaded', function() {
+  const menuButton = document.querySelector('[aria-controls="mobile-menu"]');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener('click', function() {
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+      
+      // Toggle between menu and X icon
+      const menuIcon = this.querySelector('svg:first-child');
+      const closeIcon = this.querySelector('svg:last-child');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  }
+});
+
+// Add to your main.js file in a suitable location
+// For mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+  // Remove old header if it exists
+  const oldHeader = document.querySelector('.game-header');
+  if (oldHeader) {
+    oldHeader.remove();
+  }
+
+  // Setup mobile menu toggle
+  const menuButton = document.querySelector('[aria-controls="mobile-menu"]');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener('click', function() {
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+      
+      // Toggle between menu and X icon
+      const menuIcon = this.querySelector('svg:first-child');
+      const closeIcon = this.querySelector('svg:last-child');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  }
+});
+
+// Update this function to include navbar score updates
+function updateUI() {
+  // Your existing updateUI code...
+  
+  // Update navbar score display
+  const scoreDisplay = document.getElementById('score-display');
+  const roundDisplay = document.getElementById('round-display');
+  
+  if (scoreDisplay) {
+    scoreDisplay.textContent = game.score;
+  }
+  
+  if (roundDisplay) {
+    roundDisplay.textContent = `${game.currentRound}/${game.totalRounds}`;
   }
 }
